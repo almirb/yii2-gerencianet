@@ -1,0 +1,32 @@
+{
+    "name": "code-on-yii/yii2-gerencianet",
+    "description": "A gerencianet wrapper widget for Yii framework",
+    "keywords": [
+        "yii",
+        "yii2",
+        "yii 2",
+        "widget",
+        "gerencianet"
+    ],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Eric Maicon",
+            "email": "eric@ericmaicon.com.br",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "code-on-yii\\gerencianet\\": "src"
+        }
+    }
+}
