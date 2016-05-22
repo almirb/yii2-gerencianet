@@ -8,8 +8,8 @@ use codeonyii\gerencianet\models\Item;
 use codeonyii\gerencianet\models\payment\Billet;
 use codeonyii\gerencianet\models\payment\CreditCard;
 use codeonyii\gerencianet\models\Shipping;
-use Guzzle\Common\Exception\BadMethodCallException;
 use yii\base\Component;
+use \BadMethodCallException;
 
 class GerenciaNet extends Component
 {
