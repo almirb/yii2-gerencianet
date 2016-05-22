@@ -16,7 +16,7 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException \BadMethodCallException
      */
-    public function testChargeWithoutItems ()
+    public function testChargeWithoutItems()
     {
         Yii::$app->gerencianet->charge();
     }
@@ -26,7 +26,7 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException \BadMethodCallException
      */
-    public function testChargeWithoutShipping ()
+    public function testChargeWithoutShipping()
     {
         Yii::$app->gerencianet->addItem([
             'name' => 'Item 1',
@@ -42,7 +42,7 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException \BadMethodCallException
      */
-    public function testChargeWithoutMetadata ()
+    public function testChargeWithoutMetadata()
     {
         Yii::$app->gerencianet->addItem([
             'name' => 'Item 1',
@@ -62,7 +62,7 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
     /**
      * test whether charge will work or not
      */
-    public function testCharge ()
+    public function testCharge()
     {
         Yii::$app->gerencianet->addItem([
             'name' => 'Item 1',

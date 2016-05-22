@@ -25,7 +25,7 @@ class Billet extends Model
     /**
      * @inheritdoc
      */
-    public function rules ()
+    public function rules()
     {
         return [
             [['expire_at', 'customer'], 'required'],

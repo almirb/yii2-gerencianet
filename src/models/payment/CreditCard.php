@@ -41,7 +41,7 @@ class CreditCard extends Model
     /**
      * @inheritdoc
      */
-    public function rules ()
+    public function rules()
     {
         return [
             [['installments', 'billing_address', 'payment_token', 'customer'], 'required'],

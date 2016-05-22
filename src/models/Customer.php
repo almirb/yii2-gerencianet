@@ -39,7 +39,7 @@ class Customer extends Model
     /**
      * @inheritdoc
      */
-    public function rules ()
+    public function rules()
     {
         return [
             [['name', 'cpf', 'phone_number'], 'required'],

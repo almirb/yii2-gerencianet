@@ -73,7 +73,7 @@ class GerenciaNet extends Component
      *
      * @return \Gerencianet\Gerencianet
      */
-    public function getApi ()
+    public function getApi()
     {
         if (empty($this->api)) {
             $this->api = new \Gerencianet\Gerencianet([
@@ -89,7 +89,7 @@ class GerenciaNet extends Component
     /**
      * clear everything
      */
-    public function refresh ()
+    public function refresh()
     {
         $this->chargeId = null;
         $this->items = [];
@@ -105,7 +105,7 @@ class GerenciaNet extends Component
      * @param array $item
      * @return bool
      */
-    public function addItem ($item)
+    public function addItem($item)
     {
         $model = new Item($item);
 
@@ -124,7 +124,7 @@ class GerenciaNet extends Component
      * @param array $shipping
      * @return bool
      */
-    public function addShipping ($shipping)
+    public function addShipping($shipping)
     {
         $model = new Shipping($shipping);
 
@@ -143,7 +143,7 @@ class GerenciaNet extends Component
      * @param array $metadata
      * @return bool
      */
-    public function addMetadata ($metadata)
+    public function addMetadata($metadata)
     {
         $model = new Metadata($metadata);
 
@@ -161,7 +161,7 @@ class GerenciaNet extends Component
      *
      * @return mixed
      */
-    public function charge ()
+    public function charge()
     {
         if (empty($this->items)) {
             throw new BadMethodCallException("You need to set at least one item.");
@@ -200,7 +200,7 @@ class GerenciaNet extends Component
      * @param $customer
      * @return bool
      */
-    public function addCustomer ($customer)
+    public function addCustomer($customer)
     {
         $model = new Customer($customer);
 
@@ -217,7 +217,7 @@ class GerenciaNet extends Component
      * @param $paymentType
      * @return bool
      */
-    public function payCharge ($paymentType)
+    public function payCharge($paymentType)
     {
         if (empty($this->customer)) {
             throw new BadMethodCallException("You need to set the customer.");

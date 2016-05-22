@@ -15,7 +15,7 @@ class DiscountTest extends \PHPUnit_Framework_TestCase
     /**
      * test whether metadata is created with given values
      */
-    public function testCreate ()
+    public function testCreate()
     {
         $model = new Discount([
             'type' => Discount::TYPE_PERCENTAGE,

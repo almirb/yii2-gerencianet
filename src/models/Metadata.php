@@ -19,7 +19,7 @@ class Metadata extends Model
     /**
      * @inheritdoc
      */
-    public function rules ()
+    public function rules()
     {
         return [
             [['custom_id', 'notification_url'], 'required'],

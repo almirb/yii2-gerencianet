@@ -29,7 +29,7 @@ class ShippingTest extends \PHPUnit_Framework_TestCase
     /**
      * test whether shipping is created with api
      */
-    public function testCreateWithApi ()
+    public function testCreateWithApi()
     {
         $result = Yii::$app->gerencianet->addShipping([
             'name' => 'Shipping to someone else',

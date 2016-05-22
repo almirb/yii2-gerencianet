@@ -31,7 +31,7 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     /**
      * test whether shipping is created with api
      */
-    public function testCreateWithApi ()
+    public function testCreateWithApi()
     {
         $result = Yii::$app->gerencianet->addCustomer([
             'name' => 'Gorbadoc Oldbuck',

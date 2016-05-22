@@ -17,7 +17,7 @@ class PayChargeTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException \BadMethodCallException
      */
-    public function testPayChargeWithoutCustomer ()
+    public function testPayChargeWithoutCustomer()
     {
         Yii::$app->gerencianet->payCharge([]);
     }
@@ -27,7 +27,7 @@ class PayChargeTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException \BadMethodCallException
      */
-    public function testPayChargeWithoutCharge ()
+    public function testPayChargeWithoutCharge()
     {
         Yii::$app->gerencianet->refresh();
         Yii::$app->gerencianet->addCustomer([
@@ -44,7 +44,7 @@ class PayChargeTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException \InvalidArgumentException
      */
-    public function testPayChargeParams ()
+    public function testPayChargeParams()
     {
         $this->charge();
         Yii::$app->gerencianet->addCustomer([
@@ -59,7 +59,7 @@ class PayChargeTest extends \PHPUnit_Framework_TestCase
     /**
      * check if pay charge will work with billet
      */
-    public function testPayChargeBillet ()
+    public function testPayChargeBillet()
     {
         $this->charge();
         Yii::$app->gerencianet->addCustomer([
@@ -77,13 +77,12 @@ class PayChargeTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $result = Yii::$app->gerencianet->payCharge($model);
-        var_dump($result);exit;
     }
 
     /**
      * Charge
      */
-    private function charge ()
+    private function charge()
     {
         Yii::$app->gerencianet->addItem([
             'name' => 'Item 1',

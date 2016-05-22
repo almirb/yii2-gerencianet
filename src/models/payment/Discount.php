@@ -23,7 +23,7 @@ class Discount extends Model
     /**
      * @inheritdoc
      */
-    public function rules ()
+    public function rules()
     {
         return [
             [['type', 'value'], 'required'],

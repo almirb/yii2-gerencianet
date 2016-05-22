@@ -24,7 +24,7 @@ class Shipping extends Model
     /**
      * @inheritdoc
      */
-    public function rules ()
+    public function rules()
     {
         return [
             [['name', 'value'], 'required'],

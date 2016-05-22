@@ -15,7 +15,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     /**
      * test whether item is created with given values
      */
-    public function testCreate ()
+    public function testCreate()
     {
         $model = new Item([
             'name' => 'Item 1',
@@ -29,7 +29,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     /**
      * test whether item is created with api
      */
-    public function testCreateWithApi ()
+    public function testCreateWithApi()
     {
         $result = Yii::$app->gerencianet->addItem([
             'name' => 'Item 1',

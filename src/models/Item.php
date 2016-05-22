@@ -24,7 +24,7 @@ class Item extends Model
     /**
      * @inheritdoc
      */
-    public function rules ()
+    public function rules()
     {
         return [
             [['name', 'amount', 'value'], 'required'],

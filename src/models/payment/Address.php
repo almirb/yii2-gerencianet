@@ -39,7 +39,7 @@ class Address extends Model
     /**
      * @inheritdoc
      */
-    public function rules ()
+    public function rules()
     {
         return [
             [['street', 'number', 'neighborhood', 'zipcode', 'city', 'state'], 'required'],
