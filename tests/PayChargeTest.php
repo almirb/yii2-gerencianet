@@ -77,6 +77,7 @@ class PayChargeTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $result = Yii::$app->gerencianet->payCharge($model);
+        var_dump($result);exit;
     }
 
     /**
