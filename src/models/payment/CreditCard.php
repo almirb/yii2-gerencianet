@@ -45,8 +45,8 @@ class CreditCard extends Model
     {
         return [
             [['installments', 'billing_address', 'payment_token', 'customer'], 'required'],
-            [['payment_token'], 'string'],
             [['billing_address', 'customer', 'discount'], 'safe'],
+            [['payment_token'], 'match', 'pattern' => '/[a-fA-F0-9]{40}/']
         ];
     }
 }

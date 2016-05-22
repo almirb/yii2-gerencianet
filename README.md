@@ -66,6 +66,72 @@ Yii::$app->gerencianet->addMetadata([
 Yii::$app->gerencianet->charge();
 ```
 
+**Add a customer**
+```php
+Yii::$app->gerencianet->addCustomer([
+    'name' => 'Gorbadoc Oldbuck',
+    'cpf' => '04267484171',
+    'phone_number' => '5144916523'
+]);
+```
+
+**Pay with billet**
+```php
+$model = new Billet([
+    'expire_at' => '2018-12-12',
+    'instructions' => [
+        'Pay only with money',
+        'Do not pay with gold'
+    ],
+]);
+
+$result = Yii::$app->gerencianet->payCharge($model);
+```
+
+**Pay with credit card**
+```php
+$billingAddress = new Address([
+    'street' => 'Av. JK',
+    'number' => 909,
+    'neighborhood' => 'Bauxita',
+    'zipcode' => '35400000',
+    'city' => 'Ouro Preto',
+    'state' => 'MG',
+]);
+
+$model = new CreditCard([
+    'installments' => 1,
+    'billing_address' => $billingAddress,
+    'payment_token' => '6426f3abd8688639c6772963669bbb8e0eb3c319',
+]);
+
+$result = Yii::$app->gerencianet->payCharge($model);
+```
+
+**Register CreditCard JS and collect payment_token**
+```php
+GerenciaNetCreditCard::widget([
+    'options' => [
+            'brand' => 'visa',
+            'number' => '9999999999999999',
+            'cvv' => '123',
+            'expiration_month' => '01',
+        'expiration_year' => '2015'
+    ],
+    'callback' => new JsExpression('function() {
+    }')
+]);
+```
+
+**Register Installments JS and collect installments**
+```php
+GerenciaNetInstallments::widget([
+    'total' => 1000,
+    'brand' => 'visa',
+    'callback' => new JsExpression('function() {
+    }')
+]);
+```
 
 ## Testing
 

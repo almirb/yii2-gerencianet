@@ -45,7 +45,7 @@ class Customer extends Model
             [['name', 'cpf', 'phone_number'], 'required'],
             [['name', 'cpf', 'phone_number'], 'string'],
             [['email'], 'email'],
-            [['birth'], 'date', 'format' => 'php:Y-m-d'],
+            [['birth'], 'date', 'format' => 'Y-m-d'],
             [['address'], 'safe'],
         ];
     }

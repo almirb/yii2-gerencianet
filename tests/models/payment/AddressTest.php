@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\models;
+namespace tests\models\payment;
 
 use codeonyii\gerencianet\models\payment\Address;
 use Yii;

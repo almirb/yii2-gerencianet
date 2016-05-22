@@ -2,7 +2,9 @@
 
 namespace tests;
 
+use codeonyii\gerencianet\models\payment\Address;
 use codeonyii\gerencianet\models\payment\Billet;
+use codeonyii\gerencianet\models\payment\CreditCard;
 use Yii;
 
 /**
@@ -77,7 +79,42 @@ class PayChargeTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $result = Yii::$app->gerencianet->payCharge($model);
-        var_dump($result);exit;
+        $this->assertEquals($result['status'], 'waiting');
+    }
+
+    /**
+     * check if pay charge will work with billet
+     * @todo: A propriedade [payment_token] informada não existe.: payment_token
+     */
+    public function testPayChargeCreditCard()
+    {
+//        $this->charge();
+//        Yii::$app->gerencianet->addCustomer([
+//            'name' => 'Gorbadoc Oldbuck',
+//            'cpf' => '04267484171',
+//            'phone_number' => '5144916523',
+//            'email' => 'oldbuck@gerencianet.com.br',
+//            'birth' => '1977-01-15'
+//        ]);
+//
+//        $billingAddress = new Address([
+//            'street' => 'Av. JK',
+//            'number' => 909,
+//            'neighborhood' => 'Bauxita',
+//            'zipcode' => '35400000',
+//            'city' => 'Ouro Preto',
+//            'state' => 'MG',
+//        ]);
+//
+//        $model = new CreditCard([
+//            'installments' => 1,
+//            'billing_address' => $billingAddress,
+//            'payment_token' => '6426f3abd8688639c6772963669bbb8e0eb3c319',
+//        ]);
+//
+//        $result = Yii::$app->gerencianet->payCharge($model);
+
+        //$this->assertTrue($result['status'], 'waiting');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\models;
+namespace tests\models\payment;
 
 use codeonyii\gerencianet\models\Customer;
 use codeonyii\gerencianet\models\payment\Address;
@@ -39,7 +39,7 @@ class CreditCardTest extends \PHPUnit_Framework_TestCase
         $model = new CreditCard([
             'installments' => 1,
             'billing_address' => $billingAddress,
-            'payment_token' => 'payment_token',
+            'payment_token' => '6426f3abd8688639c6772963669bbb8e0eb3c319',
             'customer' => $customer
         ]);
 

@@ -34,6 +34,11 @@ class GerenciaNet extends Component
     public $sandbox = true;
 
     /**
+     * @var string JS given by Gerencianet
+     */
+    public $javascript;
+
+    /**
      * @var int the returned id after charge()
      */
     private $chargeId;
@@ -184,14 +189,11 @@ class GerenciaNet extends Component
         $charge = $this->getApi()->createCharge([], $body);
 
         if (!empty($charge['code']) && $charge['code'] == 200) {
+            $this->refresh();
             $this->chargeId = $charge['data']['charge_id'];
-
-            $this->items = [];
-            $this->shipping = [];
-            $this->metadata = [];
         }
 
-        return $charge;
+        return $charge['data'];
     }
 
     /**
@@ -214,7 +216,9 @@ class GerenciaNet extends Component
     }
 
     /**
-     * @param $paymentType
+     * pay a charge
+     *
+     * @param CreditCard|Billet $paymentType
      * @return bool
      */
     public function payCharge($paymentType)
@@ -245,7 +249,7 @@ class GerenciaNet extends Component
                 return false;
             }
 
-            $body['payment'][] = [
+            $body['payment'] = [
                 'banking_billet' => $model->toArray()
             ];
         } elseif ($paymentType instanceof CreditCard) {
@@ -257,13 +261,46 @@ class GerenciaNet extends Component
                 return false;
             }
 
-            $body['payment'][] = [
-                'credit_card' => $paymentType->toArray()
+            $data = $model->toArray();
+            if (empty($data['discount'])) {
+                unset($data['discount']);
+            }
+
+            $body['payment'] = [
+                'credit_card' => $data
             ];
         } else {
             throw new \InvalidArgumentException("The param should be an instance of Billet or CreditCard.");
         }
 
-        $this->getApi()->payCharge($params, $body);
+        $data = $this->getApi()->payCharge($params, $body);
+
+        if (!empty($data['code']) && $data['code'] == 200) {
+            $this->refresh();
+        }
+
+        return $data['data'];
+    }
+
+
+    /**
+     * detail a charge
+     *
+     * @param int $id
+     * @return bool
+     */
+    public function detailCharge($id)
+    {
+        $params = [
+            'id' => $id,
+        ];
+
+        $data = $this->getApi()->detailCharge($params, []);
+
+        if (!empty($data['code']) && $data['code'] == 200) {
+            return $data['data'];
+        }
+
+        return null;
     }
 }

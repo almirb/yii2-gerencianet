@@ -82,6 +82,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
 
         $charge = Yii::$app->gerencianet->charge();
 
-        $this->assertEquals($charge['code'], 200);
+        $this->assertEquals($charge['status'], 'new');
     }
 }
