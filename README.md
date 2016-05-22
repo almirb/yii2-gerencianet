@@ -133,6 +133,11 @@ GerenciaNetInstallments::widget([
 ]);
 ```
 
+**Get array of brands**
+```php
+GerenciaNetHelper::getBrands();
+```
+
 ## Testing
 
 ```bash

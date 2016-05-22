@@ -9,7 +9,7 @@ class GerenciaNetHelper
      *
      * @return array
      */
-    public static function getBrands ()
+    public static function getBrands()
     {
         return [
             'visa' => 'Bandeira Visa',
