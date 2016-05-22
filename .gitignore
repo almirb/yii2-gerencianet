@@ -1,6 +1,7 @@
 vendor/
 tests/runtime/
 build/
+phpunit.xml
 
 # cache directories
 Thumbs.db
