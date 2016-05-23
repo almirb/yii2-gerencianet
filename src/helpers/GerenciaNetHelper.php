@@ -1,6 +1,6 @@
 <?php
 
-namespace codeonyii\gerencianet;
+namespace codeonyii\gerencianet\helpers;
 
 class GerenciaNetHelper
 {
