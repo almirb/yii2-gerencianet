@@ -1,8 +1,5 @@
 <?php
 return [
-    'id' => 'unit',
-    'basePath' => __DIR__,
-    'vendorPath' => __DIR__ . '/../vendor',
     'components' => [
         'gerencianet' => [
             'class' => 'codeonyii\gerencianet\GerenciaNet',

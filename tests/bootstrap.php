@@ -8,7 +8,11 @@ require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 
 Yii::setAlias('@tests', __DIR__);
 
-$config = yii\helpers\ArrayHelper::merge(
+$config = yii\helpers\ArrayHelper::merge([
+        'id' => 'unit',
+        'basePath' => __DIR__,
+        'vendorPath' => __DIR__ . '/../vendor',
+    ],
     require(__DIR__ . '/config/main.php'),
     require(__DIR__ . '/config/main-local.php')
 );
