@@ -2,6 +2,7 @@
 
 namespace codeonyii\gerencianet\models;
 
+use codeonyii\gerencianet\models\payment\Address;
 use yii\base\Model;
 
 class Customer extends Model
@@ -45,8 +46,7 @@ class Customer extends Model
             [['name', 'cpf', 'phone_number'], 'required'],
             [['name', 'cpf', 'phone_number'], 'string'],
             [['email'], 'email'],
-            [['birth'], 'date', 'format' => 'Y-m-d'],
-            [['address'], 'safe'],
+            [['address', 'birth'], 'safe'],
         ];
     }
 }
