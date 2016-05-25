@@ -38,6 +38,11 @@ class Customer extends Model
     public $address;
 
     /**
+     * @var array
+     */
+    public $juridical_person;
+
+    /**
      * @inheritdoc
      */
     public function rules()
@@ -46,7 +51,7 @@ class Customer extends Model
             [['name', 'cpf', 'phone_number'], 'required'],
             [['name', 'cpf', 'phone_number'], 'string'],
             [['email'], 'email'],
-            [['address', 'birth'], 'safe'],
+            [['address', 'birth', 'juridical_person'], 'safe'],
         ];
     }
 }

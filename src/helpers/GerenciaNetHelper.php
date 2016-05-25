@@ -12,14 +12,14 @@ class GerenciaNetHelper
     public static function getBrands()
     {
         return [
-            'visa' => 'Bandeira Visa',
-            'mastercard' => 'Bandeira MasterCard',
-            'jcb' => 'Bandeira JCB',
-            'diners' => 'Bandeira Dinners',
-            'amex' => 'Bandeira AmericanExpress',
-            'discover' => 'Bandeira Discover',
-            'elo' => 'Bandeira Elo',
-            'aura' => 'Bandeira Aura',
+            'visa' => 'Visa',
+            'mastercard' => 'MasterCard',
+            'jcb' => 'JCB',
+            'diners' => 'Dinners',
+            'amex' => 'AmericanExpress',
+            'discover' => 'Discover',
+            'elo' => 'Elo',
+            'aura' => 'Aura',
         ];
     }
 }

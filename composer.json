@@ -20,7 +20,8 @@
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": "~2.0.0",
-        "gerencianet/gerencianet-sdk-php": "1.*"
+        "gerencianet/gerencianet-sdk-php": "1.*",
+        "yiibr/yii2-br-validator": "1.0.1"
     },
     "require-dev": {
         "phpunit/phpunit": "4.0.*"

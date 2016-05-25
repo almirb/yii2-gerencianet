@@ -193,7 +193,7 @@ class GerenciaNet extends Component
             $this->chargeId = $charge['data']['charge_id'];
         }
 
-        return $charge['data'];
+        return $charge;
     }
 
     /**
@@ -279,7 +279,7 @@ class GerenciaNet extends Component
             $this->refresh();
         }
 
-        return $data['data'];
+        return $data;
     }
 
 
@@ -298,7 +298,7 @@ class GerenciaNet extends Component
         $data = $this->getApi()->detailCharge($params, []);
 
         if (!empty($data['code']) && $data['code'] == 200) {
-            return $data['data'];
+            return $data;
         }
 
         return null;
